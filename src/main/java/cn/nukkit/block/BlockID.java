@@ -306,5 +306,5 @@ public interface BlockID {
 
     int OBSERVER = 251;
 
-    int DARK_OAK_SIGN = 99999;
+    int BLOCK_DARK_OAK_SIGN = 99999;
 }

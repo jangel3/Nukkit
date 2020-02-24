@@ -1,6 +1,6 @@
 package cn.nukkit.item;
 
-import cn.nukkit.block.BlockSignPost;
+import cn.nukkit.block.BlockDarkOakSign;
 
 /**
  * author: jangel3
