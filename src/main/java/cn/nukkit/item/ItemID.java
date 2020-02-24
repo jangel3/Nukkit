@@ -246,4 +246,6 @@ public interface ItemID {
     int RECORD_WAIT = 511;
 
     int SHIELD = 513;
+
+    int DARK_OAK_SIGN = 99999;
 }
