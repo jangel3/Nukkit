@@ -29,7 +29,7 @@ public class BlockDarkOakSign extends BlockTransparentMeta implements Faceable {
 
     @Override
     public int getId() {
-        return DARK_OAK_SIGN;
+        return BLOCK_DARK_OAK_SIGN;
     }
 
     @Override
