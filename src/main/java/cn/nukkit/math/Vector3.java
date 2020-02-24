@@ -1,5 +1,8 @@
 package cn.nukkit.math;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * author: MagicDroidX
  * Nukkit Project
@@ -9,9 +12,11 @@ public class Vector3 implements Cloneable {
     public double x;
     public double y;
     public double z;
+    public Logger log;
 
     public Vector3() {
         this(0, 0, 0);
+        log = LogManager.getLogger();
     }
 
     public Vector3(double x) {

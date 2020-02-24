@@ -12,6 +12,10 @@ import java.util.UUID;
 public class DefaultPlayerDataSerializer implements PlayerDataSerializer {
     private final Server server;
 
+    public DefaultPlayerDataSerializer(Server aServer){
+        server = aServer;
+    }
+
     @Override
     public Optional<InputStream> read(String name, UUID uuid) throws IOException {
         String path = server.getDataPath() + "players/" + name + ".dat";
