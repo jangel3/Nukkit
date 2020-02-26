@@ -306,7 +306,7 @@ public class Item implements Cloneable, BlockID, ItemID {
 
             list[SHIELD] = ItemShield.class; //513
             
-            list[DARK_OAK_SIGN] = ItemDarkOakSign.class;
+            list[DARK_OAK_SIGN] = ItemSignDarkOak.class;
 
             for (int i = 0; i < 256; ++i) {
                 if (Block.list[i] != null) {

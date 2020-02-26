@@ -306,5 +306,8 @@ public interface BlockID {
 
     int OBSERVER = 251;
 
-    int BLOCK_DARK_OAK_SIGN = 99999;
+    int BLOCK_DARK_OAK_SIGN = 447;
+    int BLOCK_WALL_SIGN_DARK_OAK = 448;
+    
+    int BLOCK_SCAFFOLD = 65371;
 }

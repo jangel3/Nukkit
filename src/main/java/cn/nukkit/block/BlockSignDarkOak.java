@@ -4,7 +4,7 @@ import cn.nukkit.Player;
 import cn.nukkit.blockentity.BlockEntity;
 import cn.nukkit.blockentity.BlockEntitySign;
 import cn.nukkit.item.Item;
-import cn.nukkit.item.ItemDarkOakSign;
+import cn.nukkit.item.ItemSignDarkOak;
 import cn.nukkit.item.ItemTool;
 import cn.nukkit.level.Level;
 import cn.nukkit.math.AxisAlignedBB;
@@ -17,13 +17,13 @@ import cn.nukkit.utils.Faceable;
 /**
  * @author Nukkit Project Team
  */
-public class BlockDarkOakSign extends BlockTransparentMeta implements Faceable {
+public class BlockSignDarkOak extends BlockTransparentMeta implements Faceable {
 
-    public BlockDarkOakSign() {
+    public BlockSignDarkOak() {
         this(0);
     }
 
-    public BlockDarkOakSign(int meta) {
+    public BlockSignDarkOak(int meta) {
         super(meta);
     }
 
@@ -72,7 +72,7 @@ public class BlockDarkOakSign extends BlockTransparentMeta implements Faceable {
 
             if (face == BlockFace.UP) {
                 setDamage((int) Math.floor(((player.yaw + 180) * 16 / 360) + 0.5) & 0x0f);
-                getLevel().setBlock(block, new BlockSignPost(getDamage()), true);
+                getLevel().setBlock(block, new BlockSignDarkOak(getDamage()), true);
             } else {
                 setDamage(face.getIndex());
                 getLevel().setBlock(block, new BlockWallSign(getDamage()), true);
@@ -110,7 +110,7 @@ public class BlockDarkOakSign extends BlockTransparentMeta implements Faceable {
 
     @Override
     public Item toItem() {
-        return new ItemDarkOakSign();
+        return new ItemSignDarkOak();
     }
 
     @Override

@@ -7,24 +7,24 @@ import cn.nukkit.math.BlockFace;
 /**
  * Created by Pub4Game on 26.12.2015.
  */
-public class BlockWallSign extends BlockSignOak {
+public class BlockWallSignDarkOak extends BlockSignOak {
 
-    public BlockWallSign() {
+    public BlockWallSignDarkOak() {
         this(0);
     }
 
-    public BlockWallSign(int meta) {
+    public BlockWallSignDarkOak(int meta) {
         super(meta);
     }
 
     @Override
     public int getId() {
-        return WALL_SIGN;
+        return BLOCK_WALL_SIGN_DARK_OAK;
     }
 
     @Override
     public String getName() {
-        return "Wall Sign";
+        return "Dark Oak Wall Sign";
     }
 
     @Override

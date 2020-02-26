@@ -247,5 +247,7 @@ public interface ItemID {
 
     int SHIELD = 513;
 
-    int DARK_OAK_SIGN = 99999;
+    int DARK_OAK_SIGN = 476;
+    
+    int SCAFFOLD_ITEM = 81;
 }
