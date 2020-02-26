@@ -17,13 +17,13 @@ import cn.nukkit.utils.Faceable;
 /**
  * @author Nukkit Project Team
  */
-public class BlockSignPost extends BlockTransparentMeta implements Faceable {
+public class BlockSignOak extends BlockTransparentMeta implements Faceable {
 
-    public BlockSignPost() {
+    public BlockSignOak() {
         this(0);
     }
 
-    public BlockSignPost(int meta) {
+    public BlockSignOak(int meta) {
         super(meta);
     }
 
@@ -72,7 +72,7 @@ public class BlockSignPost extends BlockTransparentMeta implements Faceable {
 
             if (face == BlockFace.UP) {
                 setDamage((int) Math.floor(((player.yaw + 180) * 16 / 360) + 0.5) & 0x0f);
-                getLevel().setBlock(block, new BlockSignPost(getDamage()), true);
+                getLevel().setBlock(block, new BlockSignOak(getDamage()), true);
             } else {
                 setDamage(face.getIndex());
                 getLevel().setBlock(block, new BlockWallSign(getDamage()), true);

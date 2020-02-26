@@ -88,7 +88,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 
-import org.apache.logging.log4j.Logger;
 
 /**
  * @author MagicDroidX &amp; Box

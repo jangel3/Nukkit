@@ -117,7 +117,7 @@ public abstract class Block extends Position implements Metadatable, Cloneable, 
             list[FARMLAND] = BlockFarmland.class; //60
             list[FURNACE] = BlockFurnace.class; //61
             list[BURNING_FURNACE] = BlockFurnaceBurning.class; //62
-            list[SIGN_POST] = BlockSignPost.class; //63
+            list[SIGN_POST] = BlockSignOak.class; //63
             list[WOOD_DOOR_BLOCK] = BlockDoorWood.class; //64
             list[LADDER] = BlockLadder.class; //65
             list[RAIL] = BlockRail.class; //66

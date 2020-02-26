@@ -1,24 +1,24 @@
 package cn.nukkit.item;
 
-import cn.nukkit.block.BlockDarkOakSign;
+import cn.nukkit.block.BlockSignDarkOak;
 
 /**
  * author: jangel3
  * Nukkit Project
  */
-public class ItemDarkOakSign extends Item {
+public class ItemSignDarkOak extends Item {
 
-    public ItemDarkOakSign() {
+    public ItemSignDarkOak() {
         this(0, 1);
     }
 
-    public ItemDarkOakSign(Integer meta) {
+    public ItemSignDarkOak(Integer meta) {
         this(meta, 1);
     }
 
-    public ItemDarkOakSign(Integer meta, int count) {
+    public ItemSignDarkOak(Integer meta, int count) {
         super(DARK_OAK_SIGN, 0, count, "Dark Oak Sign");
-        this.block = new BlockDarkOakSign();
+        this.block = new BlockSignDarkOak();
     }
 
     @Override
