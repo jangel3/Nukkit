@@ -16,7 +16,11 @@ import java.util.function.Consumer;
 public class NukkitConsoleCompleter implements Completer {
     private final Server server;
 
-    @Override
+    public NukkitConsoleCompleter(Server server2) {
+        server = server2;
+	}
+
+	@Override
     public void complete(LineReader lineReader, ParsedLine parsedLine, List<Candidate> candidates) {
         if (parsedLine.wordIndex() == 0) {
             if (parsedLine.word().isEmpty()) {

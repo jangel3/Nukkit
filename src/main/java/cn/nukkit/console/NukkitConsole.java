@@ -18,7 +18,11 @@ public class NukkitConsole extends SimpleTerminalConsole {
     private final BlockingQueue<String> consoleQueue = new LinkedBlockingQueue<>();
     private AtomicBoolean executingCommands = new AtomicBoolean(false);
 
-    @Override
+    public NukkitConsole(Server server2) {
+        server = server2;
+	}
+
+	@Override
     protected boolean isRunning() {
         return server.isRunning();
     }

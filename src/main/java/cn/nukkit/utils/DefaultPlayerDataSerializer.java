@@ -12,7 +12,11 @@ import java.util.UUID;
 public class DefaultPlayerDataSerializer implements PlayerDataSerializer {
     private final Server server;
 
-    @Override
+    public DefaultPlayerDataSerializer(Server server2) {
+        server = server2;
+	}
+
+	@Override
     public Optional<InputStream> read(String name, UUID uuid) throws IOException {
         String path = server.getDataPath() + "players/" + name + ".dat";
         File file = new File(path);
