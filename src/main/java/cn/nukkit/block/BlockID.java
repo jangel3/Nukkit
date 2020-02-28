@@ -305,4 +305,9 @@ public interface BlockID {
     int PISTON_EXTENSION = 250;
 
     int OBSERVER = 251;
+
+    int BLOCK_DARK_OAK_SIGN = 447;
+    int BLOCK_WALL_SIGN_DARK_OAK = 448;
+    
+    int BLOCK_SCAFFOLD = 65371;//-165;
 }

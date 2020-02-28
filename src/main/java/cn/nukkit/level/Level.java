@@ -1526,7 +1526,7 @@ public class Level implements ChunkManager, Metadatable {
         } else {
             fullState = 0;
         }
-        Block block = Block.fullList[fullState & 0xFFF].clone();
+        Block block = Block.fullList.get(fullState & 0xFFF).clone();
         block.x = x;
         block.y = y;
         block.z = z;
@@ -1574,7 +1574,7 @@ public class Level implements ChunkManager, Metadatable {
                     int lcx = x & 0xF;
                     int lcz = z & 0xF;
                     int oldLevel = chunk.getBlockLight(lcx, y, lcz);
-                    int newLevel = Block.light[chunk.getBlockId(lcx, y, lcz)];
+                    int newLevel = Block.light.get(chunk.getBlockId(lcx, y, lcz));
                     if (oldLevel != newLevel) {
                         this.setBlockLightAt(x, y, z, newLevel);
                         if (newLevel < oldLevel) {
@@ -1620,7 +1620,7 @@ public class Level implements ChunkManager, Metadatable {
             int z = Hash.hashBlockZ(node);
 
             int lightLevel = this.getBlockLightAt(x, y, z)
-                    - Block.lightFilter[this.getBlockIdAt(x, y, z)];
+                    - Block.lightFilter.get(this.getBlockIdAt(x, y, z));
 
             if (lightLevel >= 1) {
                 this.computeSpreadBlockLight(x - 1, y, z, lightLevel, lightPropagationQueue, visited);
@@ -1684,7 +1684,7 @@ public class Level implements ChunkManager, Metadatable {
 
     @Override
     public synchronized void setBlockFullIdAt(int x, int y, int z, int fullId) {
-        setBlock(x, y, z, Block.fullList[fullId], false, false);
+        setBlock(x, y, z, Block.fullList.get(fullId), false, false);
     }
 
     public synchronized boolean setBlock(Vector3 pos, Block block) {

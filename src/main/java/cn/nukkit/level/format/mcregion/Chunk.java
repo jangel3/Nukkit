@@ -204,7 +204,7 @@ public class Chunk extends BaseFullChunk {
             changed = true;
         }
 
-        if (Block.hasMeta[blockId]) {
+        if (Block.hasMeta.get(blockId)) {
             i >>= 1;
             int old = this.data[i] & 0xff;
             if ((y & 1) == 0) {
@@ -244,7 +244,7 @@ public class Chunk extends BaseFullChunk {
         int old = this.data[i] & 0xff;
         if ((y & 1) == 0) {
             previousData = old & 0x0f;
-            if (Block.hasMeta[block.getId()]) {
+            if (Block.hasMeta.get(block.getId())) {
                 this.data[i] = (byte) ((old & 0xf0) | (block.getDamage() & 0x0f));
                 if (block.getDamage() != previousData) {
                     changed = true;
@@ -252,7 +252,7 @@ public class Chunk extends BaseFullChunk {
             }
         } else {
             previousData = old >> 4;
-            if (Block.hasMeta[block.getId()]) {
+            if (Block.hasMeta.get(block.getId())) {
                 this.data[i] = (byte) (((block.getDamage() & 0x0f) << 4) | (old & 0x0f));
                 if (block.getDamage() != previousData) {
                     changed = true;

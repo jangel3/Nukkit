@@ -274,7 +274,7 @@ public abstract class BaseFullChunk implements FullChunk, ChunkManager {
                     this.setBlockSkyLight(x, y, z, 15);
                 }
                 for (int y = top; y >= 0; --y) {
-                    if (Block.solid[this.getBlockId(x, y, z)]) {
+                    if (Block.solid.get(this.getBlockId(x, y, z))) {
                         break;
                     }
                     this.setBlockSkyLight(x, y, z, 15);
