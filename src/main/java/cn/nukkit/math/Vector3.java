@@ -9,6 +9,8 @@ import org.apache.logging.log4j.Logger;
  */
 public class Vector3 implements Cloneable {
 
+    public Logger log;
+
     public double x;
     public double y;
     public double z;
@@ -31,6 +33,8 @@ public class Vector3 implements Cloneable {
         this.x = x;
         this.y = y;
         this.z = z;
+
+        log = LogManager.getLogger();
     }
 
     public double getX() {

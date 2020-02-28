@@ -57,8 +57,10 @@ public class Nukkit {
     public static int DEBUG = 1;
     private static Logger log;
 
+    private static org.apache.logging.log4j.Logger log;
+
     public static void main(String[] args) {
-    	log = LogManager.getLogger(Nukkit.class);
+        log = LogManager.getLogger(Nukkit.class);
         // Force IPv4 since Nukkit is not compatible with IPv6
         System.setProperty("java.net.preferIPv4Stack" , "true");
         System.setProperty("log4j.skipJansi", "false");

@@ -52,13 +52,12 @@ public class Network {
 
     private String name;
     private String subName;
-    
     private Logger log;
 
     public Network(Server server) {
         this.registerPackets();
         this.server = server;
-        log = LogManager.getLogger(this);
+        log = LogManager.getLogger();
     }
 
     public void addStatistics(double upload, double download) {
