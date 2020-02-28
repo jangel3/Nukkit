@@ -13,7 +13,7 @@ We need to keep this class for backwards compatibility
  */
 @Log4j2
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class MainLogger extends ThreadedLogger {
+public class MainLogger extends ThreadedLogger implements Logger{
 
     private static final MainLogger logger = new MainLogger();
 
@@ -21,41 +21,42 @@ public class MainLogger extends ThreadedLogger {
         return logger;
     }
 
+    @Override
     public void emergency(String message) {
         log.fatal(message);
     }
 
-    
+    @Override    
     public void alert(String message) {
         log.error(message);
     }
 
-    
+    @Override    
     public void critical(String message) {
         log.fatal(message);
     }
 
-    
+    @Override    
     public void error(String message) {
         log.error(message);
     }
 
-    
+    @Override    
     public void warning(String message) {
         log.warn(message);
     }
 
-    
+    @Override    
     public void notice(String message) {
         log.warn(message);
     }
 
-    
+    @Override    
     public void info(String message) {
         log.info(message);
     }
 
-    
+    @Override    
     public void debug(String message) {
         log.debug(message);
     }
@@ -68,7 +69,7 @@ public class MainLogger extends ThreadedLogger {
         log.throwing(t);
     }
 
-    
+    @Override    
     public void log(LogLevel level, String message) {
         level.log(this, message);
     }
@@ -77,47 +78,47 @@ public class MainLogger extends ThreadedLogger {
         throw new UnsupportedOperationException();
     }
 
-    
+    @Override    
     public void emergency(String message, Throwable t) {
         log.fatal(message, t);
     }
 
-    
+    @Override    
     public void alert(String message, Throwable t) {
         log.error(message, t);
     }
 
-    
+    @Override    
     public void critical(String message, Throwable t) {
         log.fatal(message, t);
     }
 
-    
+    @Override    
     public void error(String message, Throwable t) {
         log.error(message, t);
     }
 
-    
+    @Override    
     public void warning(String message, Throwable t) {
         log.warn(message, t);
     }
 
-    
+    @Override    
     public void notice(String message, Throwable t) {
         log.warn(message, t);
     }
 
-    
+    @Override    
     public void info(String message, Throwable t) {
         log.info(message, t);
     }
 
-    
+    @Override    
     public void debug(String message, Throwable t) {
         log.debug(message, t);
     }
 
-    
+    @Override    
     public void log(LogLevel level, String message, Throwable t) {
         level.log(this, message, t);
     }

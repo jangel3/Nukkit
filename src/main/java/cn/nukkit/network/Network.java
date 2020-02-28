@@ -19,6 +19,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * author: MagicDroidX
  * Nukkit Project
@@ -49,10 +52,12 @@ public class Network {
 
     private String name;
     private String subName;
+    private Logger log;
 
     public Network(Server server) {
         this.registerPackets();
         this.server = server;
+        log = LogManager.getLogger();
     }
 
     public void addStatistics(double upload, double download) {
