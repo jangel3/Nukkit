@@ -388,8 +388,7 @@ public class Server implements IServer {
         this.console.setExecutingCommands(true);
 
         log.info("Loading {} ...", TextFormat.GREEN + "nukkit.yml" + TextFormat.WHITE);
-        this.config = new Config(this.dataPath + "nukkit.yml", Config.YAML);
-
+        this.config = dependencies.Retrieve(Config.class);
         ignoredPackets.addAll(getConfig().getStringList("debug.ignored-packets"));
 
         log.info("Loading {} ...", TextFormat.GREEN + "server.properties" + TextFormat.WHITE);
