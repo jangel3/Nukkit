@@ -10,7 +10,6 @@ import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteOrder;
-import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -63,8 +62,10 @@ public class GlobalBlockPalette {
         int legacyId = id << 6 | meta;
         int runtimeId = legacyToRuntimeId.get(legacyId);
         if (runtimeId == -1) {
-            //runtimeId = registerMapping(runtimeIdAllocator.incrementAndGet(), legacyId);
-            throw new NoSuchElementException("Unmapped block registered id:" + id + " meta:" + meta);
+            runtimeId = legacyToRuntimeId.get(id << 6);
+            if (runtimeId == -1) {
+                throw new NoSuchElementException("Unmapped block registered id:" + id + " meta:" + meta);
+            }
         }
         return runtimeId;
     }
