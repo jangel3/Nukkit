@@ -75,7 +75,7 @@ public class BlockSignOak extends BlockTransparentMeta implements Faceable {
                 getLevel().setBlock(block, new BlockSignOak(getDamage()), true);
             } else {
                 setDamage(face.getIndex());
-                getLevel().setBlock(block, new BlockWallSign(getDamage()), true);
+                getLevel().setBlock(block, Block.get(BlockID.WALL_SIGN, getDamage()), true);
             }
 
             if (player != null) {
